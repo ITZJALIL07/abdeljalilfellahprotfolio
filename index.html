@@ -219,6 +219,7 @@ new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting
 document.querySelectorAll('.svc .card,.xp,.pf a,.about,.cta,.st div,h3,.sub').forEach(function(el){
 var i=Array.prototype.indexOf.call(el.parentNode.children,el);el.style.transitionDelay=(i%6*90)+'ms';el.classList.add('rv');io.observe(el)});
 var words=['Social Media Manager','Creative Director','Digital Marketer'],ty=document.getElementById('ty'),wi=0,ci=words[0].length,dir=-1;
+document.addEventListener('site-language-change',function(e){words=e.detail==='ar'?['مدير وسائل التواصل الاجتماعي','مدير إبداعي','مسوق رقمي']:['Social Media Manager','Creative Director','Digital Marketer'];wi=0;ci=0;dir=1;ty.textContent=''});
 function tick(){ci+=dir;ty.textContent=words[wi].slice(0,ci);var d=dir<0?45:90;
 if(dir<0&&ci===0){dir=1;wi=(wi+1)%words.length;d=350}else if(dir>0&&ci===words[wi].length){dir=-1;d=2200}
 setTimeout(tick,d)}
@@ -245,4 +246,4 @@ var cs=v.querySelectorAll('.chips button');cs.forEach(function(b){b.onclick=func
 document.querySelectorAll('a[data-c]').forEach(function(a){var c=a.dataset.c,h,t;
 if(c==='m'){h='mailto:'+e;t=e}else if(c==='t'){h='tel:+'+n;t=d}else{h='https://wa.me/'+n+(a.dataset.t?'?text='+a.dataset.t:'')}
 a.href=h;if(a.dataset.x)a.textContent=t})})();
-</script></body></html>
+</script><script src="i18n.js"></script></body></html>
