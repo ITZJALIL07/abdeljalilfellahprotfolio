@@ -95,7 +95,7 @@ figure:not(.missing){cursor:zoom-in}
 #lb button{position:absolute;background:#0e0a1c;color:#fff;border:1px solid var(--line);border-radius:50%;width:44px;height:44px;font-size:20px;cursor:pointer}
 #lb .x{top:16px;right:16px}#lb .pv{left:14px;top:50%}#lb .nx{right:14px;top:50%}
 /* welcome screen: same structure as the portfolio's, with GHOSTR's mood (shy blue, then angry red) */
-#sp{position:fixed;inset:0;z-index:100;display:grid;place-items:center;animation:spx 0s 9s forwards}
+#sp{position:fixed;inset:0;z-index:100;display:grid;place-items:center;animation:spx 0s 12s forwards}
 @keyframes spx{to{visibility:hidden;pointer-events:none}}
 #sp .cu{position:absolute;left:0;right:0;height:50.5%;background:#06030d;transition:transform .9s cubic-bezier(.77,0,.18,1)}
 #sp .cu.t{top:0}#sp .cu.b{bottom:0}
@@ -260,7 +260,7 @@ lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('on
 document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
 })();
 (function(){var sp=document.getElementById('sp');if(!sp)return;
-var de=document.documentElement,bar=sp.querySelector('.bar i'),pc=sp.querySelector('.pc'),t0=null,fin=false,D=4200;
+var de=document.documentElement,bar=sp.querySelector('.bar i'),pc=sp.querySelector('.pc'),t0=null,fin=false,D=7000;
 de.classList.add('hold');
 function end(){if(fin)return;fin=true;sp.classList.add('open');de.classList.remove('hold');setTimeout(function(){sp.remove()},1000)}
 function tick(n){if(fin)return;if(t0===null)t0=n;var p=Math.min(1,(n-t0)/D);bar.style.width=(p*100)+'%';pc.textContent=Math.round(p*100)+'%';if(p<1)requestAnimationFrame(tick);else setTimeout(end,250)}
