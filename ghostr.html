@@ -142,7 +142,6 @@ html.hold,html.hold body{overflow:hidden}
 68%{opacity:1;transform:translateX(4px) scale(.98);filter:brightness(1.15) drop-shadow(0 0 36px #00d0ff) hue-rotate(150deg)}
 74%{opacity:1;transform:translateX(0) scale(1);filter:brightness(1.15) drop-shadow(0 0 40px #00d0ff) hue-rotate(165deg)}
 100%{opacity:1;transform:scale(1.03);filter:brightness(1.2) drop-shadow(0 0 46px #00d0ff) hue-rotate(165deg)}}
-@media(prefers-reduced-motion:reduce){#sp{display:none}}
 </style>
 </head>
 <body>
@@ -261,7 +260,6 @@ lb.addEventListener('click',function(e){if(e.target===lb)lb.classList.remove('on
 document.addEventListener('keydown',function(e){if(!lb.classList.contains('on'))return;if(e.key==='Escape')lb.classList.remove('on');if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
 })();
 (function(){var sp=document.getElementById('sp');if(!sp)return;
-if(window.matchMedia&&matchMedia('(prefers-reduced-motion:reduce)').matches){sp.remove();return}
 var de=document.documentElement,bar=sp.querySelector('.bar i'),pc=sp.querySelector('.pc'),t0=null,fin=false,D=4200;
 de.classList.add('hold');
 function end(){if(fin)return;fin=true;sp.classList.add('open');de.classList.remove('hold');setTimeout(function(){sp.remove()},1000)}
